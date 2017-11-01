@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	var arr=[[1,2,2],[3,4,5,5],[6,7,8,9[11,12[12,13,[14]]]],10];
+	var newarr=[];
+	/*扁平化*/
+	function changgeArr(arr){
+		for (var i = 0; i < arr.length; i++) {
+			if(arr[i] instanceof Array){
+				changgeArr(arr[i]);
+			}
+			else{
+				arrnew.push(arr[i]);
+			}
+	    }
+	}
+	changgeArr(arr);
+	console.log(newarr);
+
+	//
+</script>

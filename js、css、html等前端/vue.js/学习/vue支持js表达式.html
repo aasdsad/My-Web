@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+<script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	{{5+5}}<br>
+	{{ ok ? 'YES' : 'NO' }}<br>
+	{{ message.split('').reverse().join('——') }}
+	<!-- 	reverse()是降序的作用；sort是排序的作用；
+		split（）是分割的作用，反悔的是一个数组；
+		join() 方法用于把数组中的所有元素放入一个字符串。 元素是通过指定的分隔符进行分隔的。 语法 arrayObject.join(separator) 参数 描述 separator 可眩指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。 返回值 返回一个字符串。 -->
+
+	<div v-bind:id="'list-' + id">菜鸟教程</div>
+</div>
+	
+<script>
+new Vue({
+  el: '#app',
+  data: {
+	ok: true,
+    message: 'RUNOOB',
+	id : 1
+  }
+})
+</script>
+</body>
+</html>

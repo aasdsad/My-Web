@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>倒计时器</title>
+	<meta charset="utf-8">
+		<script type="text/javascript">
+		var timeLeft=90*60;
+		function countTime(){
+			if (timeLeft==0) {
+				alert("时间到！");
+			}
+			var minutes=parseInt(timeLeft/(60),10);//以十进制返回整数，向下取整，忽略小数位置
+			var sec=parseInt(timeLeft-minutes*60);
+			document.getElementById('show').innerHTML="剩余时间："+minutes+":"+sec;
+			timeLeft-=1;
+			setTimeout("countTime()",1000);
+		}
+	</script>
+</head>
+<body onload="countTime()">
+	<div id="show"></div>
+</body>
+</html> -->
+<!-- 将其封装成一个组件并加上滚动显示的功能
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>倒计时器</title>
+	<meta charset="utf-8">
+		<script type="text/javascript">
+		function start(timeLeft,selector){
+			timeLeft*=60*1000;
+			var timerContent=document.createElement("div");
+			timerContent.className="tc";
+			timerContent.style.cssText="overflow:hidden;";
+			selector.appendChild(timerContent);
+			var show=document.createElement("div");
+			timerContent.appendChild(show);
+			var showScroll=document.createElement("div");
+			timerContent.appendChild(showScroll);
+			var showScroll_begin=document.createElement("div");
+			var showScroll_end=document.createElement("div");
+			showScroll.appendChild(showScroll_begin);
+			showScroll.appendChild(showScroll_end);
+			showScroll_begin.innerHTML="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 ";
+			showScroll_end.innerHTML=showScroll_begin.innerHTML;
+		/*	function setStyle(obj,css){
+				for(var arr in obj)
+				{
+					obj.style[att]=css[arr];
+				}
+
+			}
+			setStyle(obj,{width:"100px";
+							height:"100px"
+			});*/
+			(function countTime(){
+				if (timeLeft==0) {
+					alert("时间到！");
+					return;
+				}
+				var minutes=parseInt(timeLeft/(1000*60),10);//以十进制返回整数，向下取整，忽略小数位置
+				var sec=parseInt((timeLeft-minutes*60*1000)/1000);
+				show.innerHTML="剩余时间："+minutes+":"+sec;
+				(function Marqyee(){
+					if(showScroll_end.offsetheight<=showScroll.scrollTop)
+					{
+						showScroll.scrollTop-=showScroll_begin.offsetheight;
+					}
+					else{
+						showScroll.scrollTop++;
+					}
+				})();
+				timeLeft-=1000/60;
+				setTimeout(countTime,1000/60);
+			})();
+		}
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+		start(90,document.body);
+	</script>
+
+</body>
+</html>
