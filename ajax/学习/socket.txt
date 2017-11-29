@@ -1,0 +1,55 @@
+package S;
+
+
+//实现的文件传输的程序代码、实验过程和实验结果。  1.基于TCP的socket编程  TCPClient端的程序  
+import java.io.*;
+import java.net.*;
+
+public class TCPClient {   
+	  public static void main(String argv[]) throws Exception {
+       String sentence;
+       String modifiedSentence;
+      BufferedReader infromUser =new BufferedReader(new InputStreamReader(System.in));
+      Socket clientSocket = new Socket("192.168.43.246",6789); //与服务器建立连接
+     while(){
+          DataOutputStream outToServer = new DataOutputStream(clientSocket.getOutputStream());//建立从客户端输入的监听器，用于向服务器发送数据
+          BufferedReader infromServer =new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));//建立从服务端建立的监听器，用于获取服务器返回的值
+          sentence = infromUser.readLine();   //获取客户端输入的值
+          outToServer.writeBytes(sentence + '\n');//然后向服务器发送
+          modifiedSentence = infromServer.readLine();//获取服务端返回的值        
+          System.out.println("FROM SERVER:"+modifiedSentence);//然后输出
+      }
+      clientSocket.close();//关闭客户端的链接
+      }
+}  
+
+
+
+
+package S;
+//TCPSever端程序  
+import java.io.*;
+import java.net.*; 
+class TCPServer{
+	public static void main(String argv[]) throws Exception   {
+		String ClientSentence;
+		String capitalizedSentence; 
+		ServerSocket welcomeSocket = new ServerSocket(6789);
+		while(true){          
+		 Socket connectionSocket = welcomeSocket.accept(); 
+		 BufferedReader infromClient =new BufferedReader(new InputStreamReader(connectionSocket. getInputStream()));
+		 DataOutputStream outToClient =new DataOutputStream(connectionSocket.getOutputStream());
+		 ClientSentence = infromClient. readLine();
+                 if(ClientSentence.equals("查询目录")){
+                       outToClient.writeBytes(new BufferedReader(new InputStreamReader(A.静夜思   B.望岳)))；
+                     
+                 }
+                 else{
+
+		     capitalizedSentence =ClientSentence.toUpperCase() + '\n';
+                 }
+		 outToClient.writeBytes(capitalizedSentence);
+		}
+	}
+}
+
