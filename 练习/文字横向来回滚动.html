@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css"> 
+  	#gongao{
+  		width:1000px;
+  		height:30px;
+  		overflow:hidden;
+  		line-height:30px;
+  		font-size:13px;
+  		font-family:'宋体';
+  		background:#DDE5ED;
+  		color:#0C77CF;
+  		font-weight:bold;
+  	} 
+	#gongao #scroll_begin, #gongao #scroll_end{
+		display:inline
+	} 
+	</style> 
+	<script type="text/javascript"> 
+		function ScrollImgLeft(){ 
+			var speed=50; 
+			var scroll_end = document.getElementById("scroll_end"); 
+			var scroll_div = document.getElementById("scroll_div"); 
+			scroll_end.innerHTML=scroll_begin.innerHTML; 
+			function Marquee(){ //marquee不被w3c认可，建议弃用
+				if(scroll_end.offsetWidth-scroll_div.scrollLeft<=0) 
+					scroll_div.scrollLeft-=scroll_begin.offsetWidth; 
+				else 
+					scroll_div.scrollLeft++; 
+			} 
+			var MyMar=setInterval(Marquee,speed); 
+			scroll_div.onmouseover=function() {clearInterval(MyMar);} 
+			scroll_div.onmouseout=function() {setInterval(Marquee,speed);} 
+		}
+</script> 
+
+
+</head>
+<body>
+	<div id="gongao"> 
+		<div style="width:900px;height:30px;margin:0 auto;white-space: nowrap;overflow:hidden;" id="scroll_div" class="scroll_div"> <!-- white-space:nowrap文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。 -->
+			<div id="scroll_begin"> 
+				${affiche.content} ${affiche.content} ${affiche.content} 
+				${affiche.content} ${affiche.content} ${affiche.content} 
+				jbhlkhkljl;hkjhgjkhghjfghjfgdhgdjhfjkgjhgoiuyhpihlhlkjhlkjhklhklgjkhgjkhgjkhgjkhghjgyugkjhlkh
+			</div> 
+			<div id="scroll_end"></div> 
+		</div> 
+		<script type="text/javascript">ScrollImgLeft();</script> 
+	</div> 
+</body>
+</html>

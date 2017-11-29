@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+<script type="jquery-1.10.2.min.js">
+<script type="text/javascript">
+function fn(){
+$(function(){
+	var btn=$('#hash');
+	btn.onclick=function(){
+		alert('');
+	};
+	btn.onclick=function(){
+		alert('');
+	};
+});
+}
+</script>
+</head>
+<body>
+	<div id="div">  
+        <span style="white-space:pre">  sdf</span>
+        <p id="p">  
+            <span style="white-space:pre"> sdf </span>
+            <input type="button" value="1"  id="in"/>  
+        	<span style="white-space:pre"> sdf </span>
+        </p>  
+   		<span style="white-space:pre"> sdf </span>
+   	</div>  
+    <script type="text/javascript">  
+   /*     var inp = document.getElementById("in");  
+        var myp = document.getElementById("p");  
+        var d = document.getElementById("div");  
+          
+        inp.onclick=function(){  
+            alert(1);  
+        }  
+          
+        myp.onclick=function(){  
+            alert(2);  
+        }  
+        d.onclick=function(){  
+            alert(3);  
+        }  */
+        var oinput = document.getElementById("in");  
+            oinput.addEventListener('mouseover',f1);  
+            oinput.addEventListener('click',f2);  
+            oinput.addEventListener('click',f3);  
+            function f1(){  
+                oinput.style.width="300px";  
+                oinput.style.height="30px"  
+            }  
+            function f2(){  
+                oinput.style.background="red";  
+            }  
+            function f3(){  
+                oinput.style.border="3px solid yellow";  
+            }  
+
+    </script>
+
+</body>
+</html>

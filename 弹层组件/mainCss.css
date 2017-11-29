@@ -1,0 +1,50 @@
+.mylist{
+	width: 200px;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin:0;
+	background-color: rgb(174,174,174);
+}
+
+
+
+
+
+
+
+
+
+.overlay{
+	width:100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 50%;
+	filter:alpha(opacity=50);
+	position: absolute;;
+	left: 0;
+	top: 0;
+	z-index: 998;
+}
+.wrraper{
+
+	width: 400px;
+	height: 500px;
+	background-color: #fff;
+	position: absolute;
+	z-index: 999;
+	/*margin:auto;*//*第一种css绝对定位居中方式*/
+	/*第二种css绝对定位方式，css3中的用法，在IE8中不兼容*/
+	/*left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);*//*css3中的用法，在IE8中不兼容*/
+	/*第三种css绝对定位的居中方式，*/
+	left: 50%;
+	top: 50%;
+	margin-left: 200px;
+	margin-top: 250px;
+}
+.header{
+
+
+}

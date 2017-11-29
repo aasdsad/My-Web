@@ -1,0 +1,121 @@
+JQuery常用函数及功能小结
+1.文档加载完成执行函数
+ $(document).ready(function(){
+  alert("开始了");
+ });
+
+ 
+
+2.添加/删除CSS类
+ $("#some-id").addClass("NewClassName");
+ $("#some-id").removeClass("ClassNameToBeRemoved");
+ 
+3.选择符 利用了CSS和Xpath（XML Path Language）选择符的能力，以及jQuery独有的选择符
+ 3.1常用的：
+    1.根据标签名： $('p')  选择文档中的所有段落
+    2. 根据ID： $("#some-id")
+    3.类： $('.some-class')
+ 3.2使用CSS选择符：
+    $("#some-id > li")  选择特定id下的所有子li元素
+    $("#some-id li:not(.horizontal)")  伪类选择，特定id下所有没有.horizontal 类的li元素
+ 3.3使用XPath选择符：
+  属性选择：$("a[@title]") 选择所有带title属性的链接
+         $("div[ol]") 选择包含一个ol元素的所有div元素
+         $('a[@href^="mailto:%22]')  选择所有带href属性[@href]且该属性值以mailto开头^="mailto"（^标识字符串开始，$标识字符串结尾，*表示字符串中任意位置）
+         $('a[@href$=".pdf"]') 选择带有href属性且该属性值以.pdf结尾的所有链接
+         $('a[@href*="mysite.com"]') 选择mysite.com出现在href任意位置(包含mysite.com)的所有链接
+ 3.4JQuery自定义选择符（过滤器，从已选择的结果集中过滤出符合某一条件的所有元素），与CSS的伪类选择符相似，使用“:”开头
+  1.$('div.horizontal:eq(1)')  选择带有类horizontal的div集合中的第2个项
+     $('div:nth-child(1)')  选择作为其父元素第1个子元素的所有div
+  2.自定义选择符:odd和:even选择奇偶行
+   $('tr:odd').addClass('odd'); //过滤选择结果集中的奇数元素
+   $('tr:even').addClass('even'); //过滤选择结果集中的偶数元素
+  3.自定义选择符:contains()
+   $('td:contains("Henry")') 选择包含Henry字符串的所有表格
+ 3.5JQuery选择函数
+  1.$('#some-id').parent() 选择特定元素的父元素
+  2.$('#some-id').next()  选择特定元素最近的下一个同级元素
+  3.$('#some-id').siblings() 选择特定元素的所有同级元素
+  4.$('#some-id').find('.some-class') 选择特定元素下所有包含特定类的元素
+  5.$('#some-id').find('td').not(':contains("Henry")') 选择特定元素下表格内容不包含Henry的所有元素
+  5.$('#some-id').find('td').not(':contains("Henry")').end()  .end()表示回到最后一次.find()的元素处
+ 3.6访问DOM元素，使用get()方法从选择后的JQuery对象中获得，去掉JQuery的包装
+  var myTag = $('#some-id').get(0).tagName;
+  var myTag = $('#some-id')[0].tagName;  //与上面的等效
+  
+4.事件（都是给某一元素绑定事件）
+ 4.1绑定事件 
+  $("#some-id").bind("click", function(){   })
+  $("#some-id").unbind("click", bindedFunctionName);  //移除已绑定的事件，前提是绑定的函数有名称（不是匿名函数）
+  $("#some-id").click(function(){  })
+ 4.2复合函数绑定事件
+  $("#some-id").toggle(function(){ } ,function(){ }); //交替执行
+  $(“#some-id”).toggleClass("hidden"); //  添加/删除类交替进行
+  $("#some-id").hover(function(){ }, function(){ }); //鼠标进入元素时执行第一个函数，离开元素时执行第二个函数
+  $("#some-id").one("click", functionName);  //只需触发一次，随后便立即解除绑定
+ 4.3模仿用户触发某一事件
+  $("#some-id").trigger("click"); //触发特定元素的click事件
+
+ 
+
+5.为元素添加效果
+ 5.1读取或设置CSS样式属性
+  $("#some-id").css("property") //读取样式值
+  $('#some-id').css('property', 'value') //设置一个样式值
+  $('#some-id').css({property1: 'value1', property2: 'value2'}) //设置多个样式属性
+ 5.2改变字体大小
+  $(document).ready({
+   $('#button-id').click(function(){
+    var currentSize = $('#text-id').css('fontSize'); //获取字体大小，如30px
+    var num = parseFloat(currentSize, 10); //将值转为浮点数，.parseFloat( , )为javascript内置函数，这里是转为10进制的浮点数
+    var unit = currentSize.slice(-2); //获取单位名称，如px，.slice()是javascript内置函数，获取字符串指从定位置开始的子字符串，-2表示倒数两个字符
+    num *= 1.5;
+    $('text-id').css('fontSize', num + unit); //设置字体大小样式
+   });
+  });
+ 5.3隐藏和显示
+  $('#some-id').show();    //无效果，会自动记录原来的display属性值（如：block, inline），再回复display值
+  $('#some-id').hide();  //无效果，等效于：$('#some-id').css('display', 'none');   隐藏元素，不保留物理位置
+  大小、透明度逐渐变化的显示或隐藏
+  $('#some-id').show('slow'); //指定显示速度，在指定时间内元素的高、宽、不透明度逐渐增加到属性值，有：slow是0.6秒，normal是0.4秒，fast是0.2秒，或者直接填入毫秒数
+  $('#some-id').hide(800); //与.show()指定速度显示一样，指定时间内高、宽、不透明度逐渐减小到0
+  淡入淡出
+   $('some-id').fadeIn('slow'); //指定时间内不透明度属性值由0增加到1
+   $('some-id').fadeOut('slow'); //指定时间内不透明度值由1减小到0
+ 5.4构建具有动画效果的show
+  主要调用.animate()方法，其有4个参数：包含样式属性及值的映射；可选的速度参数；可选的缓动类型；可选的回调函数；
+  1.并发显示多个效果
+   $('#some-id').animate({height: 'show', width: 'show', opacity: 'show'}, 'slow', function(){ alert('动画显示元素');});
+   $('div .button').animate({left:600, height:44}, 'slow');  //水平位置从0移动到600，高度由0增加到44
+  2.排队显示多个效果，级联多个.animate()，一个效果显示完了再显示下一个效果
+   $('#some-id').animate({left:600}, 'slow').animate({height: 44}, 'slow');
+   
+6DOM操作
+ 6.1属性操作
+  $('#some-id').attr('property'); //获取属性
+  $('#some-id').attr('property','value'); //设置属性
+  $('#some-id').attr({'property1': 'value1', 'property2': 'value2'}); //设置多个属性
+  修改一个段落中所有链接，并给每个链接附上新的id号
+   $('div p .content a').each(function(index){
+    $(this).attr({
+     'rel': 'external',
+     'id': 'link_' + index
+    });
+   });
+   // *********   JQuery的.each()类似一个迭代器，给其传递的参数index类似一个计数器  *********
+ 6.2插入新元素
+  1.将元素插入到其他元素前面：.insertBefore()和.before()
+  2.将元素插入到其他元素后面：.insertAfter()和after()
+  3.将元素插入到其他元素内部或后面（相当于追加一个元素）：appendTo()和append()
+  4.将元素插入到其他元素内部或前面（相当于追加一个元素）：prependTo()和prepend()
+ 6.3包装元素，将元素包装到其他元素中 .wrap();
+  $('#some-id').wrap('<li></li>'); // 将某一特定元素包装到li中，即在特定元素外围添加一个包围元素
+ 6.4复制元素 .clone()
+  1.$('#some-id').clone().appendTo($('body'));
+  2.复制深度，当传入false参数时，只复制匹配上的元素，其内部的其他元素不复制
+   $('#some-id').clone(false)
+  注意：.clone()方法不会复制元素中的事件
+ 6.5移除匹配元素中的元素，类似清空元素
+  $('#some-id').empty();
+ 6.6从DOM中移除匹配的元素及其后代元素
+  $('#some-id').remove();

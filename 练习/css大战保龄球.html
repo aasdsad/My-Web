@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS大战保龄球</title>
+<style type="text/css">
+h1 { font-size:16px; }
+dl,dt,dd {/*网页设计，应该先清除浏览器默认样式，这个习惯有时很重要*/
+    padding:0;
+    margin:0;    
+}
+dl {/*这个声明很重要，它能够强迫保龄球在dl元素框内定位*/
+    position:relative;
+    width:778px;
+    height:612px;
+    background:url(images/bg3.jpg) no-repeat left top;
+}
+dt {/*把公共样式统一放在前面，能够优化代码*/
+    position:absolute;
+    color:red;
+    font-size:20px;
+    font-weight:bold;
+}
+img {
+    width:50px;
+    position:absolute;
+}
+
+/*控制dd内的img元素，设计图像显示效果*/
+dd:nth-of-type(1) img {/*第一行第1个保龄球*/
+    left:370px;
+    top:280px;
+    z-index:1000;
+}
+
+dd:nth-of-type(2) img {/*第二行第1个保龄球*/
+    left:330px;
+    top:250px;
+    width:40px;
+    z-index:100;    
+}
+dd:nth-of-type(3) img {/*第二行第2个保龄球*/
+    left:390px;
+    top:250px;
+    width:40px;
+    z-index:100;      
+}
+
+dd:nth-of-type(4) img {/*第三行第1个保龄球*/
+    left:300px;
+    top:220px;
+    width:30px;  
+    z-index:10;        
+}
+dd:nth-of-type(5) img {/*第三行第2个保龄球*/
+    left:350px;
+    top:220px;
+    width:30px;
+    z-index:10;      
+}
+dd:nth-of-type(6) img {/*第三行第3个保龄球*/
+    left:405px;
+    top:220px;
+    width:30px;
+     z-index:10;     
+}
+
+dd:nth-of-type(7) img {/*第四行第1个保龄球*/
+    left:270px;
+    top:190px;
+    width:20px;         
+}
+dd:nth-of-type(8) img {/*第四行第2个保龄球*/
+    left:320px;
+    top:190px;
+    width:20px;   
+}
+dd:nth-of-type(9) img {/*第四行第3个保龄球*/
+    left:370px;
+    top:190px;
+    width:20px;
+}
+dd:nth-of-type(10) img {/*第四行第4个保龄球*/
+    left:420px;
+    top:190px;
+    width:20px;
+}
+
+/*控制dt元素，设计数字显示效果*/
+dt:nth-of-type(1){/*第一行数字1*/
+    left:392px;
+    top:370px;
+    z-index:1001;
+}
+
+dt:nth-of-type(2){/*第二行数字2*/
+    left:344px;
+    top:320px;
+    z-index:101;    
+}
+dt:nth-of-type(3){/*第二行数字3*/
+    left:408px;
+    top:320px;
+    z-index:101;      
+}
+
+dt:nth-of-type(4){/*第三行数字4*/
+    left:310px;
+    top:270px;
+    z-index:11;        
+}
+dt:nth-of-type(5){/*第三行数字5*/
+    left:360px;
+    top:270px;
+    z-index:11;      
+}
+dt:nth-of-type(6){/*第三行数字6*/
+    left:415px;
+    top:270px;
+    z-index:11;     
+}
+dt:nth-of-type(7){/*第四行数字7*/
+    left:274px;
+    top:220px;  
+    z-index:1;    
+}
+dt:nth-of-type(8){/*第四行数字8*/
+    left:324px;
+    top:220px;
+    z-index:1;      
+}
+dt:nth-of-type(9){/*第四行数字9*/
+    left:374px;
+    top:220px;
+    z-index:1;      
+}
+dt:nth-of-type(10){/*第四行数字10*/
+    left:420px;
+    top:220px;
+    z-index:1;      
+}
+</style>
+</head>
+<body>
+<h1>CSS大战保龄球</h1>
+<dl>
+    <dt>1</dt>
+    <dd><img src="images/ball.png" /></dd>
+    <dt>2</dt>
+    <dd><img src="images/ball.png" /></dd>    
+    <dt>3</dt>
+    <dd><img src="images/ball.png" /></dd>
+    <dt>4</dt>
+    <dd><img src="images/ball.png" /></dd>
+    <dt>5</dt>
+    <dd><img src="images/ball.png" /></dd>  
+    <dt>6</dt>
+    <dd><img src="images/ball.png" /></dd>   
+    <dt>7</dt>
+    <dd><img src="images/ball.png" /></dd>   
+    <dt>8</dt>
+    <dd><img src="images/ball.png" /></dd> 
+    <dt>9</dt>
+    <dd><img src="images/ball.png" /></dd>
+    <dt>10</dt>
+    <dd><img src="images/ball.png" /></dd>    
+</dl>    
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <title>文字滚动效果的实现</title>
+   <script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+  <script type="text/javascript">
+      function TimeTo(dd) {          
+          document.getElementById('text').value=dd;//最后这里将固定格式的字符串 更新到 ID为 TextBox1的文本框中
+      }
+      $(function(){
+          window['ttt'] = setInterval(aaa,100); //页面加载的时候执行
+ });
+
+      function stopInterval()
+      {
+          clearInterval(window['ttt']); //清除计时器
+          window['ttt']="";
+          var aa = "张三,李四,王五,赵六,孙七,胡八,曾九,刘十,伊一,朴二";
+          var arr = aa.split(',');
+          var rdd = 9 * Math.random();
+          var leth = Math.round(rdd);
+          var leths = arr[leth].toString();
+          document.getElementById('TextBox1').value = leths;
+      }
+    function aaa() {
+          var aa = "张三,李四,王五,赵六,孙七,胡八,曾九,刘十,伊一,朴二";
+          var arr = aa.split(',');
+          var rdd = 9 * Math.random();
+          var leth = Math.round(rdd);
+          var leths = arr[leth].toString();
+          TimeTo(leths);
+          }  
+      
+      function TimeTo2(){
+          if(window['ttt']==""){
+          window['ttt'] = setInterval(aaa,100);
+        }
+      }
+  </script>
+</head>
+<body>
+<form runat="server">
+<input type="text" id="text" />
+<input type="button" value="开始抽奖" onClick="TimeTo2();"/>
+<input type="button" value="获取幸运观众" onClick="stopInterval();"/>
+</form>
+</body>
+</html>

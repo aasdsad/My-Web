@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>v-bind的用法</title>
+	<meta charset="utf-8">
+	<script src="vue.min.js"></script>
+	<style type="text/css">
+		.c{
+			background-color: #444;
+			color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="a">
+		<label for="r1">请点击按钮</label><input type="checkbox" name="" id="r1" v-model="class1">
+		<div v-bind:class="{'c':class1}">
+			<span>哈哈，我是奥特曼</span>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		new Vue({
+			data:{
+			el:"#a",
+				class1:false
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*//为搜索框定义一个整体样式*/
+		#search-container{
+			width: 562px;
+			margin: 200px auto;
+		}
+		#search-input{/*//为搜索框的输入框定义一个样式*/
+			width: 460px;
+			height: 34px;
+			float: left;
+			outline: none;
+			text-indent: 10px;
+			border: 1px solid #ccc;
+			font-size: 14px;
+		}
+		#search-btn{/*//为搜索按钮定义一个样式*/
+			width: 100px;
+			height: 36px;
+			float: left;
+			background: #3385ff;
+			border-color: #3385ff;
+			color: #fff;
+			font-size: 14px;
+			cursor: pointer;
+			font-weight: bolder;
+		}
+		#search-result{/*//为选择项定义一个css样式*/
+			width: 560px;
+			border: 1px solid #ccc;
+			display: none;
+		}
+		#search-result li{
+			list-style: none;
+			text-indent: 10px;
+		}
+		#search-result li:hover{/*/如果鼠标悬浮到这个元素，那么就会变成灵位一种颜色*/
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id="search-container">
+		<input type="text" id="search-input">
+		<button id="search-btn">百度一下</button>
+	
+				<ul id="search-result">
+					<!-- <li>01</li>
+					<li>02</li>
+					<li>04</li> -->
+					<!-- <li>03</li> -->
+				</ul>
+	
+	</div>
+
+
+
+	<script src="jquery-1.10.2.min.js"></script>
+	<script>
+		$(function(){
+			//为选择器设置变量
+			var data = ["iphone6", "iphone6plus", "huawei", "oppo"];
+			var $searchInput = $("#search-input");
+			var $serachResult = $("#search-result");
+			var index = -1;
+			//如果搜索框变成获得焦点，就会变成另外一种颜色，如果焦点失去，它又会变成恢复原来的颜色
+			$searchInput.on("focus", function(){
+				$(this).css("border", "1px solid #3385ff");
+				$(this).css("border", "1px solid #ccc");
+			}).on("blur", function(){
+			}).on("keyup", function(e){
+				if(e.which == 38 || e.which == 40 || e.which == 13){
+					return;
+				}
+				$serachResult .css("display", "block").html("");//让搜索条目变成可见
+				var inputVal = $(this).val().trim();//val()函数无返回值时，则返回所选元素的值，无返回值时为所选元素赋值。
+													//trim()函数的作用是去掉所选字符串前后的空白字符
+				if(inputVal == ""){
+					$serachResult.css("display", "none");//如果没有搜索词的搜索结果，就将所选元素变为不可见
+				}else{//如果有则让他们都显示出来
+					for(var i=0; i<data.length; i++){
+						if(data[i].indexOf(inputVal) != -1) {//如果点击了这条项目，搜索框就会将这条项目的值获取
+							var $li = $("<li></li>").html(data[i]).on("click", function(){
+								$searchInput.val($(this).html());
+								$serachResult.css("display", "none");
+							});
+						}
+							$serachResult.append($li);
+					}
+				}
+			}).on("keydown", function(e){
+				if(e.which == 40){//表示键盘的下键
+					index++;
+					if(index >= $serachResult.children().length - 1){
+						index = -1;
+					}
+					for(var i=0; i<$serachResult.children().length; i++){
+						$serachResult.children().eq(i).css("background", "transparent");
+					}
+					$serachResult.children().eq(index).css("background", "#ccc");
+				}
+				if(e.which == 38){//表示键盘的上键
+					index--;
+					if(index <= -1){
+						index = $serachResult.children().length - 1;
+					}
+					for(var i=0; i<$serachResult.children().length; i++){
+						$serachResult.children().eq(i).css("background", "transparent");
+					}
+					$serachResult.children().eq(index).css("background", "#ccc");
+				}
+				if(e.which == 13){//表示键盘的Pause键
+					$searchInput.val($serachResult.children().eq(index).html());
+					$serachResult.css("display", "none");
+				}
+			});
+
+
+		});
+	</script>
+
+
+</body>
+</html>

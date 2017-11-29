@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>用异或输出数组中唯一一个出现1次的元素</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var Things=[4,1,5,1,4];
+	var reg=0;
+	for (var i = 0; i < Things.length; i++) 
+		reg^=Things[i];
+	console.log(reg);
+	</script>
+</body>
+</html>
