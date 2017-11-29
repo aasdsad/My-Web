@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 向搜索引擎表示该页面是html语言，并且语言为英文网站，其"lang"的意思就是“language”，语言的意思，而“en”即表示english
+你的页面如果是中文页面，可将其改为
+<html lang="zh">
+zh即表示中文 -->
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js tree view example</title>
+    <style>
+      body {
+        font-family: Menlo, Consolas, monospace;
+        color: #444;
+      }
+      .item {
+        cursor: pointer;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      ul {
+        padding-left: 1em;
+        line-height: 1.5em;
+        list-style-type: dot;
+      }
+    </style>
+    <!-- Delete ".min" for console warnings in development -->
+    <script src="../../dist/vue.min.js"></script>
+  </head>
+  <body>
+
+    <!-- item template -->
+    <script type="text/x-template" id="item-template"><!-- js内联模板字符串没有任何有关ol等标签渲染错误的限制 -->
+      <li>
+        <div
+          :class="{bold: isFolder}"
+          @click="toggle"
+          @dblclick="changeType">
+          {{model.name}}
+          <span v-if="isFolder">[{{open ? '-' : '+'}}]</span>
+        </div>
+        <ul v-show="open" v-if="isFolder">
+          <item
+            class="item"
+            v-for="model in model.children"
+            :model="model"><!-- 让model这个变量指向循环中的model -->
+          </item>
+          <li class="add" @click="addChild">+</li>
+        </ul>
+      </li>
+    </script>
+
+    <p>(You can double click on an item to turn it into a folder.)</p>
+
+    <!-- the demo root element -->
+    <ul id="demo">
+      <item
+        class="item"
+        :model="treeData"><!-- 让组件中model这个变量指向一个叫做model的对象 -->
+      </item>
+    </ul>
+
+    <!-- demo code -->
+    <script src="tree.js"></script>
+  </body>
+</html>
