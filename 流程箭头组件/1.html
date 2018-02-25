@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>箭头流程</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.nav{
+			width: 402px;
+			height: 100px;
+			position: absolute;
+			left: -200px;
+			margin-left: 50%;
+			top: 28%;
+			margin-top: -50px;
+			z-index: 2;
+		}
+		.nav li{
+			width: 83px;
+			padding: 0px 0px 0px 0px;
+			line-height: 25px;
+			display: inline-block;
+			color: #fff;
+			position: relative;
+			font-size: 12px;
+			text-align: center;
+			border: 1px solid #e5e5e5;
+			}
+		.nav li:after{
+			content: "";
+			display: block;
+			border-top: 12px solid #FFFFFF;
+			border-bottom: 13px solid #FFFFFF;
+			border-left: 12px solid #e5e5e5;
+			position: absolute;
+			right: -12px;
+			top: 0;
+			z-index: 10;
+		}
+		.nav li:before{
+			content:"";
+			display: block;
+			border-top: 12px solid #FFFFFF;
+			border-bottom: 13px solid #FFFFFF;
+			border-left:12px solid #e5e5e5;
+			position: absolute;
+			left: 0px;
+			top:0;
+		}
+		.nav li:first-child{
+			padding-left: 36px;
+			width:47px;
+			border-right: none;
+			background: #FFFFFF;
+		}
+		.nav li:first-child .trangle{
+			border-left: 12px solid #FFFFFF;
+		}
+		.nav li:first-child span{
+			display: inline-block;
+			position: relative;
+			left: -16px;
+			color: #F6F6F6 100%;
+		}
+		.nav li:last-child{
+			padding-right: 35px;
+			width: 65px;
+		}
+		.nav li:last-child span{
+			display: inline-block;
+			position: relative;
+			right: -19px;
+		}
+		.nav li:first-child:before{
+			display: none;
+		}
+		.nav li:last-child:after,.end{
+			display: none;
+		}
+		.trangle{
+			border-top: 12px solid transparent;
+			border-bottom: 13px solid transparent;
+			border-left: 12px solid #FFFFFF;
+			position: absolute;
+			z-index: 999;
+			display: inline-block;
+			left: 82px;
+		}
+		span{
+			color:#131111;
+		}
+		.space{
+			display: inline-block;
+			width: 1px;
+			height: 25px;
+		}
+		.stop{
+			display: none;
+			margin-top: 5px;
+			position: relative;
+			left: 302px;
+			width: 93px;
+			height: 25px;
+			color: #D0021B;
+			border: 1px solid #D0021B;
+		}
+		.stop span{
+			color: #D0021B;
+			font-size: 12px;
+			width: 100%;
+			height: 100%;
+			display: inline-block;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<li><span>草稿</span><div class="trangle"></div></li>
+		<div class="space"></div>
+		<li style="border-left: none;	" class="dd"><div class="trangle" style="left: -2px;"></div><span>待审核</span><div class="trangle"></div></li>
+		<div class="space"></div>
+		<li><div class="trangle" style="left: -2px;"></div><span>待复核</span><div class="trangle"></div></li>
+		<div class="space"></div>
+		<li><div class="trangle" style="left: -2px;"></div><span>已核准</span><div class="trangle" style="left: 84px;"></li>
+		<div class="stop"><span>已终止</span></div>
+	</div>
+	<script src="data.js"></script>
+	<script type="text/javascript">
+		function go(arrData){
+			var a,b,arrlength=arrData.length,c=0,data=arrData;
+			if(arrData.length>1){
+				a=arrData[1].isCurrentStatus||0,
+				b=arrData[0].isShadowd||0;
+			}
+			var lis=document.querySelectorAll('li');
+			if(arrData=!null){
+				if(arrlength==1&& data[c] instanceof Object){
+					var stopSet=document.querySelector('.stop');
+					stopSet.style.display='block';
+				}else{
+					if (a) {
+						lis[1].style.background='#108EE9';
+						var trs=lis[1].querySelectorAll('.trangle');
+						trs[1].style.borderLeft='12px solid #108EE9';
+						lis[1].className='dd';
+						var style=document.createElement("style");
+						var text=document.createTextNode(".nav .dd:before{content:'';display: block;border-top: 12px solid #108EE9;border-bottom: 13px solid #108EE9;border-left:12px solid #e5e5e5;position: absolute;left: 0px;top:0;}");
+						style.appendChild(text);
+						document.body.appendChild(style);
+						lis[0].style.background='#F6F6F6';
+						var trs=lis[0].querySelectorAll('.trangle');
+						trs[0].style.borderLeft='12px solid #F6F6F6';
+					}
+					else{
+						if (b) {
+							lis[0].style.background='#F6F6F6';
+							var trs=lis[0].querySelectorAll('.trangle');
+							trs[0].style.borderLeft='12px solid #F6F6F6';
+						}
+					}
+				}
+			}
+		}
+		go(arrData);
+	</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+var arrData=[
+	{
+		"name":"待接货",
+		"status":"WAIT_ACCEPT",
+		"isShadowd":true
+	},
+	{
+		"name":"待发货",
+		"status":"WAIT_DELIVER",
+		"isCurrentStatus":true
+	},
+	{
+		"name":"验货入库",
+		"status":"STOCK_IN"
+	},
+	{
+		"name":"已完成",
+		"status":"DELIVERD"
+	}
+];
