@@ -12,7 +12,14 @@
 				margin: 0;
 				height: 100%;
 			}
-			
+			#tab{
+				display: none;
+				    margin-left: 81px;
+			}
+			#wu{
+				display: none;
+				    margin-left: 81px;
+			}
 		</style>
 	</head>
 	<body>
@@ -33,15 +40,18 @@
 			</div>
 		</div>
  -->
+ 		<script src="jquery-1.10.2.min.js"></script>
  		<script src="dialog.js"></script>
 		<script>
 			var oBtn = document.getElementById("btn");//button dom 对象
 			oBtn.onclick = function(){//单击事件
-				showDialog('这是第一个窗口', '用户名：<input type="text">', true, function(){
+				showDialog('这是第一个窗口', '<div style="margin-left: 81px;margin-top: 30px;"><span>请输入用户名：</span><input type="text"><button id="find">查找</button></div><p style="margin-left: 81px;">查找结果：</p><p id="wu">查无此用户</p><table id="tab"><tr><td>用户名</td><td>昵称</td><td></td></tr></table>', true, function(){
 					alert(1234);
 				});
 			};
-
+			$("div #find").on("click",function(){
+				alert("123");
+			})
 
 			
 		</script>

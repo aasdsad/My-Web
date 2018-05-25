@@ -41,6 +41,8 @@ function showDialog(title, content, showBtnCancel, okHandler){
 		oBtnCancel.onclick = oBtnClose.onclick;
 		oFooter.appendChild(oBtnCancel);
 	}
-	
+	$("div #find").on("click",function(){
+				alert("123");
+			})
 
 }

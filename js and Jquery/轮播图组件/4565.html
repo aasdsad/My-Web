@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.nameContent{
+			display: inline-block;
+			width: 50px;
+		}
+		.dongtaiContent{
+			display: inline-block;
+			width: 300px;
+			min-height: 100px;
+		}
+	</style>
+	<script type="text/javascript" src="C:\Users\LPD\Desktop\jquery-3.3.1.min.js"></script>
+</head>
+<body>
+		<div class="dongtaikaung"></div>
+		<script type="text/javascript">
+				var data=[
+					{
+						name:'zahngsan',text:'asdfasdf',{
+								name:'lisi',text:'wqerqewtrqwer'
+						}
+					}
+				];
+				function dongtaiDiv(data,selector){
+						var $nameDom=$("<div class='nameContent'><span></span></div>");
+						var $layDom=$("<div class='dongtaiContent'></div>");
+						var $topDom=$("<div class='topContent'></div>");
+						var $middleDom=$("<div class='middleContent'></div>");
+						$layDom.append($topDom).append($bottomDom);
+						selector.append($nameDom).append($layDom);
+
+				}
+				dongtaiDiv(data,".dongtaikaung");
+
+		</script>
+</body>
+</html>
