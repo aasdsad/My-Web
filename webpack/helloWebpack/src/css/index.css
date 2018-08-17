@@ -1,0 +1,9 @@
+body{
+	display:flex;
+	background-image:url('../images/1.jpg');
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+#app{
+	margin:auto;
+}

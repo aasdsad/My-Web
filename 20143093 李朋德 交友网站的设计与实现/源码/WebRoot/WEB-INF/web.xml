@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>Login</servlet-name>
+  <servlet-class>com.servlet.Login</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>Register</servlet-name>
+  <servlet-class>com.servlet.Register</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>getMyfriend</servlet-name>
+  <servlet-class>com.servlet.getMyfriend</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>delFriend</servlet-name>
+  <servlet-class>com.servlet.delFriend</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>addFriend</servlet-name>
+  <servlet-class>com.servlet.addFriend</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>addFriend2</servlet-name>
+  <servlet-class>com.servlet.addFriend2</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>alterInformation</servlet-name>
+  <servlet-class>com.alterInformation</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>alterIn</servlet-name>
+  <servlet-class>com.servlet.alterIn</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>getMyInformation</servlet-name>
+  <servlet-class>com.servlet.getMyInformation</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>createNewActivity</servlet-name>
+  <servlet-class>com.servlet.createNewActivity</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>getActivity</servlet-name>
+  <servlet-class>com.servlet.getActivity</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>dongtaiRelease</servlet-name>
+  <servlet-class>com.servlet.dongtaiRelease</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>writeInHuifu</servlet-name>
+  <servlet-class>com.servlet.writeInHuifu</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>getDongtaiRelease</servlet-name>
+  <servlet-class>com.servlet.getDongtaiRelease</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>getDongtaiHuifu</servlet-name>
+  <servlet-class>com.servlet.getDongtaiHuifu</servlet-class>
+ </servlet>
+ <servlet>
+  <description>This is the description of my J2EE component</description>
+  <display-name>This is the display name of my J2EE component</display-name>
+  <servlet-name>getFriendRequest</servlet-name>
+  <servlet-class>com.servlet.getFriendRequest</servlet-class>
+ </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getFRes</servlet-name>
+    <servlet-class>com.servlet.getFRes</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>addMyFriend</servlet-name>
+    <servlet-class>com.servlet.addMyFriend</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getThisActivity</servlet-name>
+    <servlet-class>com.servlet.getThisActivity</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>joinActivity</servlet-name>
+    <servlet-class>com.servlet.joinActivity</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getThisActivityName</servlet-name>
+    <servlet-class>getThisActivityName</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getActivityName</servlet-name>
+    <servlet-class>com.servlet.getActivityName</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getXixiPageInfo</servlet-name>
+    <servlet-class>com.servlet.getXixiPageInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>postFeige</servlet-name>
+    <servlet-class>com.servlet.postFeige</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getfeigePageInfo</servlet-name>
+    <servlet-class>com.servlet.getfeigePageInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>deleteFei</servlet-name>
+    <servlet-class>com.servlet.deleteFei</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getThisRelease</servlet-name>
+    <servlet-class>com.servlet.getThisRelease</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getMyDongtaiRelease</servlet-name>
+    <servlet-class>com.servlet.getMyDongtaiRelease</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getMyfeige</servlet-name>
+    <servlet-class>com.servlet.getMyfeige</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>alterPsw</servlet-name>
+    <servlet-class>com.servlet.alterPsw</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getMyPsw</servlet-name>
+    <servlet-class>com.servlet.getMyPsw</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>isFriend</servlet-name>
+    <servlet-class>com.servlet.isFriend</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <servlet-mapping>
+  <servlet-name>Login</servlet-name>
+  <url-pattern>/Login</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>Register</servlet-name>
+  <url-pattern>/Register</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>getMyfriend</servlet-name>
+  <url-pattern>/getMyfriend</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>delFriend</servlet-name>
+  <url-pattern>/delFriend</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>addFriend</servlet-name>
+  <url-pattern>/addFriend</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>addFriend2</servlet-name>
+  <url-pattern>/addFriend2</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>alterInformation</servlet-name>
+  <url-pattern>/servlet/alterInformation</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>alterIn</servlet-name>
+  <url-pattern>/alterIn</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>getMyInformation</servlet-name>
+  <url-pattern>/getMyInformation</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>createNewActivity</servlet-name>
+  <url-pattern>/createNewActivity</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>getActivity</servlet-name>
+  <url-pattern>/getActivity</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>dongtaiRelease</servlet-name>
+  <url-pattern>/dongtaiRelease</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>writeInHuifu</servlet-name>
+  <url-pattern>/writeInHuifu</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>getDongtaiRelease</servlet-name>
+  <url-pattern>/getDongtaiRelease</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>getDongtaiHuifu</servlet-name>
+  <url-pattern>/getDongtaiHuifu</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+  <servlet-name>getFriendRequest</servlet-name>
+  <url-pattern>/t/getFriendRequest</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getFRes</servlet-name>
+    <url-pattern>/getFRes</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>addMyFriend</servlet-name>
+    <url-pattern>/addMyFriend</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getThisActivity</servlet-name>
+    <url-pattern>/getThisActivity</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>joinActivity</servlet-name>
+    <url-pattern>/joinActivity</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getThisActivityName</servlet-name>
+    <url-pattern>/getThisActivityName</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getActivityName</servlet-name>
+    <url-pattern>/getActivityName</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getXixiPageInfo</servlet-name>
+    <url-pattern>/getXixiPageInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>postFeige</servlet-name>
+    <url-pattern>/postFeige</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getfeigePageInfo</servlet-name>
+    <url-pattern>/getfeigePageInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>deleteFei</servlet-name>
+    <url-pattern>/deleteFei</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getThisRelease</servlet-name>
+    <url-pattern>/getThisRelease</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getMyDongtaiRelease</servlet-name>
+    <url-pattern>/getMyDongtaiRelease</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getMyfeige</servlet-name>
+    <url-pattern>/getMyfeige</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>alterPsw</servlet-name>
+    <url-pattern>/alterPsw</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getMyPsw</servlet-name>
+    <url-pattern>/getMyPsw</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>isFriend</servlet-name>
+    <url-pattern>/isFriend</url-pattern>
+  </servlet-mapping>
+ <welcome-file-list>
+  <welcome-file>index.jsp</welcome-file>
+ </welcome-file-list>
+ <login-config>
+  <auth-method>BASIC</auth-method>
+ </login-config>
+</web-app>

@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+	.nameContent{
+		float: left;
+		position: relative;
+	    background: #3c4e3e87;
+	    display: inline-block;
+	    width: 109px;
+	    min-height: 30px;
+   		margin-right: 20px;
+   		margin-top: 0px;
+	}
+	.nameContent span{
+		font-size:22px;
+		position: relative;
+		display: inline-block;
+		width: 109px;
+		height: 30px;
+		padding:0px; 
+		margin: 0px;
+		text-align: center;
+	}
+	.dongtaiContent{
+		/*float: left;*/
+		background: #12121f12;
+		display: inline-block;
+		width: 763px;
+		min-height: 100px;
+	}
+	.dongtaiContent{
+		word-break: break-all;
+	}
+	.dongtaiContain{
+		position: relative;
+    /* margin-left: 50%; */
+    	margin-top: 72px;
+    	left: 173px;
+	}
+	.topContent p{
+		font-size:18px;
+	}
+	.bottomContent p{
+		font-size:12px;
+	}

@@ -1,0 +1,104 @@
+@CHARSET "UTF-8";
+.butDiv{
+			display: none;
+			position: relative;
+		}
+.friendList{
+}
+	.table-responsive {
+		    min-height: .01%;
+		    overflow-x: auto;
+		}
+		.table {
+		    width: 100%;
+		    max-width: 100%;
+		    margin-bottom: 20px;
+		}
+		table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+		.table-striped>tbody>tr:nth-of-type(odd) {
+		    background-color: #f9f9f9;
+		}
+		.clients-list table tr td {
+		    height: 46px;
+		    vertical-align: middle;
+		    border: none;
+		}
+		.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+		    border-bottom: 1px solid #e7eaec;
+		    line-height: 1.42857;
+		    padding: 8px;
+		    vertical-align: middle;
+		}
+		.client-avatar img {
+		    width: 28px;
+		    height: 28px;
+		    border-radius: 50%;
+		}
+		img {
+		    vertical-align: middle;
+		}
+		img {
+		    border: 0;
+		}
+		.clients-list table tr td {
+		    height: 46px;
+		    vertical-align: middle;
+		    border: none;
+		}
+		.client-link {
+		    font-weight: 600;
+		    color: inherit;
+		}
+		a {
+		    cursor: pointer;
+		}
+		.fa {
+		    display: inline-block;
+		    font: normal normal normal 14px/1 FontAwesome;
+		    font-size: inherit;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		}
+		.fa-envelope:before {
+		    content: "\f0e0";
+		}
+		.client-status {
+		    text-align: left;
+		}
+		.label {
+		    background-color: #d1dade;
+		    color: #5e5e5e;
+		    font-size: 10px;
+		    font-weight: 600;
+		    padding: 3px 8px;
+		    text-shadow: none;
+		}
+		.label-primary {
+		    background-color: #337ab7;
+		}
+		.label {
+		    display: inline;
+		    padding: .2em .6em .3em;
+		    font-size: 75%;
+		    font-weight: 700;
+		    line-height: 1;
+		    color: #fff;
+		    text-align: center;
+		    white-space: nowrap;
+		    vertical-align: baseline;
+		    border-radius: .25em;
+		}
+		table {
+    background-color: transparent;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
