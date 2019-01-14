@@ -26,6 +26,7 @@ const router = new Router({
       component: Author,
       meta: { requiresAuth: true }
     }, {
+      //进入页面默认加载的视图
       path: '/*',
       component: Select
     }
